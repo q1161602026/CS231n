@@ -23,8 +23,6 @@ class KNearestNeighbor(object):
     - X: A numpy array of shape (num_test, D) containing test data consisting
          of num_test samples each of dimension D.
     - k: The number of nearest neighbors that vote for the predicted labels.
-    - num_loops: Determines which implementation to use to compute distances
-      between training points and testing points.
     Returns:
     - y: A numpy array of shape (num_test,) containing predicted labels for the
       test data, where y[i] is the predicted label for the test point X[i].  
@@ -38,7 +36,6 @@ class KNearestNeighbor(object):
     """
     Compute the distance between each test point in X and each training point
     in self.X_train using no explicit loops.
-    Input / Output: Same as compute_distances_two_loops
     """
     num_test = X.shape[0]
     num_train = self.X_train.shape[0]
